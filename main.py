@@ -36,17 +36,38 @@ def find_name(target_name: str) -> dict:
     for item in TEEN_TITANS:
         if target_name == item["name"]:
             a = item
-
     return a
 
 def validate_password(character_data: dict) -> bool:
     attempts1 = 0
+    passFound = False
     while attempts1 < 3:
         password = input(f"Enter the password for {character_data['name']}: ")
         if password == character_data['password']:
-            print(password)
+            passFound = True
+            break
         else:
             attempts1 += 1
             print(f"Password was wrong. You have {3 - attempts1} attempt(s) left")
+
+    return passFound
+
+
+
+# Actual Application
+
+titans_name = input("What is your teen titan's name: ").title()
+
+character_info = find_name(titans_name)
+
+#If the character name is found
+if character_info:
+    passInformation = validate_password(character_info)
+    if passInformation:
+        print("sUCCESS")
+    else:
+        print("Out of attempts. ACCESS DENIED.")
+else:
+    print("Character not found.")
 
 
