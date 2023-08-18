@@ -1,3 +1,5 @@
+from security_hub_information.character_data import TEEN_TITANS
+
 def find_name(target_name: str) -> dict:
     """
     This function will take a string containing a users input for what Titan they want to log in as.
