@@ -15,6 +15,7 @@ def find_name(target_name: str) -> dict:
             a = item
     return a
 
+
 def validate_password(character_data: dict) -> bool:
     attempts1 = 0
     passFound = False
@@ -31,7 +32,13 @@ def validate_password(character_data: dict) -> bool:
 
     return passFound
 
+
 def validate_security_question(character_data: dict) -> bool:
+    """
+    This function
+    :param character_data: Dict contain four key-value pairs regarding the Teen Titan the user is logged in as.
+    :return:
+    """
     print(f"Answer the security question for: {character_data['name']}")
     attempts1 = 0
     access = False
@@ -44,9 +51,14 @@ def validate_security_question(character_data: dict) -> bool:
             break
         elif response.lower() == character_data['security_answer']:
             attempts1 += 1
-            print(f"Security question answer was wrong. Watch your capitalization. You have {3 - attempts1} attempt(s) left")
+            print(
+                f"Security question answer was wrong. Watch your capitalization. You have {3 - attempts1} attempt(s) left")
         else:
             attempts1 += 1
             print(f"Security question answer was wrong. You have {3 - attempts1} attempt(s) left")
 
     return access
+
+
+def play_a_sound(sound_name: str):
+    playsound(f'/assets/{sound_name}.wav')

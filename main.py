@@ -1,6 +1,5 @@
-from security_hub_information.utilities import find_name, validate_password, validate_security_question
-
-# Actual Application
+from security_hub_information.utilities import find_name, validate_password, validate_security_question, play_a_sound
+import playsound
 
 titans_name = input("What is your teen titan's name: ").title()
 
@@ -17,8 +16,10 @@ if character_info:
 
         if securityCheck:
             print("ACCESS APPROVED")
+            play_a_sound("success_entry")
         else:
             print("ACCESS DENIED.")
+
 
     else:
         print("Out of attempts. ACCESS DENIED.")
