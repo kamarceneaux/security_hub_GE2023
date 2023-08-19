@@ -26,7 +26,7 @@ TEEN_TITANS = [
     {
         "name": "Robin",
         "password": "bruce_wayn3",
-        "security_question": "",
-        "security_answer": ""
+        "security_question": "What was my first job?",
+        "security_answer": "Circus"
     },
 ]
